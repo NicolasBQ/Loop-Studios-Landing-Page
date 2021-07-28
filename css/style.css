@@ -8,8 +8,11 @@ body {
 
 header .mobile-menu {
   display: none;
+  position: absolute;
+  z-index: -1;
   background-color: black;
-  height: 100%;
+  height: 100vh;
+  width: 100%;
 }
 
 header .mobile-menu div {
@@ -23,18 +26,47 @@ header .mobile-menu div {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header .mobile-menu div .logo {
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 35px;
+  height: 32px;
+  width: 192px;
+  margin: 35px 0 35px 35px;
+  background-image: url(../images/logores2.png);
 }
 
 header .mobile-menu div .close-btn {
-  padding: 35px;
-  background-image: url(../images/mobile/icon-close.svg);
+  height: 20px;
+  width: 20px;
+  margin: 35px 35px 35px 0;
+  background-image: url(../images/icon-close.svg);
+  cursor: pointer;
+}
+
+header .mobile-menu .mobile-links {
+  display: none;
+  height: 100%;
+  width: 100%;
+  margin-top: 50%;
+}
+
+header .mobile-menu .mobile-links li {
+  margin-top: 20px;
+}
+
+header .mobile-menu .mobile-links li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Josefin Sans";
+}
+
+header .mobile-menu .mobile-links li a:hover {
+  color: #8c8c8c;
 }
 
 header .hero {
@@ -48,18 +80,12 @@ header .hero {
   z-index: -1;
 }
 
-header .bar-name {
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 35px;
-}
-
 header .nav-bar {
-  max-width: 100%;
-  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  height: auto;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -68,10 +94,21 @@ header .nav-bar {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .nav-bar .bar-name {
+  height: 32px;
+  width: 192px;
+  margin: 35px 0 35px 35px;
+  background-image: url(../images/logo.svg);
 }
 
 header .nav-bar .burguer {
-  margin: 35px;
+  margin: 35px 35px 35px 0;
+  cursor: pointer;
 }
 
 header .nav-bar .burguer span {
@@ -80,10 +117,6 @@ header .nav-bar .burguer span {
   background-color: white;
   display: block;
   margin-bottom: 5px;
-}
-
-header .nav-bar .nav-links {
-  display: none;
 }
 
 header .nav-box {
@@ -97,7 +130,10 @@ header .nav-box h1 {
   color: white;
   margin: 0;
   padding: 20px;
-  font-size: 2.3rem;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  font-weight: 300;
+  font-family: "Josefin Sans";
 }
 
 main .interactive-section .interactive {
@@ -110,93 +146,97 @@ main .interactive-section .interactive {
 }
 
 main .interactive-section h2 {
-  font-size: 2rem;
-  font-weight: 400;
   margin: auto;
+  font-size: 2rem;
+  font-weight: 300;
+  font-family: "Josefin Sans";
+  line-height: 2rem;
   text-align: center;
 }
 
 main .interactive-section p {
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.5rem;
   margin: auto 60px;
-  color: #8c8c8c;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Alata";
+  line-height: 1.8rem;
   text-align: center;
+  color: #8c8c8c;
 }
 
 main .creations-section h2 {
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 300;
+  font-family: "Josefin Sans";
   margin: 90px auto 40px auto;
   text-align: center;
 }
 
-main .creations-section .our-creations div {
+main .creations-section .our-creations .img-container {
+  position: relative;
   height: 120px;
   width: 327px;
   margin: 30px auto;
-  -webkit-box-shadow: inset 0px 0px 70px 0px black;
-          box-shadow: inset 0px 0px 70px 0px black;
   cursor: pointer;
+  -webkit-box-shadow: inset 40px 0px 50px -5px black;
+          box-shadow: inset 40px 0px 50px -5px black;
 }
 
-main .creations-section .our-creations div h3 {
+main .creations-section .our-creations .img-container img {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: -2;
+}
+
+main .creations-section .our-creations .img-container .middle {
+  position: absolute;
+  top: 67%;
+  left: 25%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: start;
+}
+
+main .creations-section .our-creations .img-container .middle .img-text {
+  font-size: 1.5rem;
+  font-family: "Josefin Sans";
+  font-weight: 300;
+  line-height: 1.5rem;
   color: white;
   width: 130px;
-  font-size: 1.5rem;
   padding: 40px 20px;
 }
 
-main .creations-section .our-creations div:hover {
-  background-color: #8c8c8c;
+main .creations-section .our-creations .img-container:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
-main .creations-section .our-creations div:hover h3 {
-  color: black;
+main .creations-section .our-creations .img-container:hover img {
+  opacity: 0.3;
+}
+
+main .creations-section .our-creations .img-container:hover .middle {
   opacity: 1;
 }
 
-main .creations-section .our-creations .deep-earth {
-  background-image: url(../images/mobile/image-deep-earth.jpg);
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-main .creations-section .our-creations .night-arcade {
-  background-image: url(../images/mobile/image-night-arcade.jpg);
-}
-
-main .creations-section .our-creations .soccer-team {
-  background-image: url(../images/mobile/image-soccer-team.jpg);
-}
-
-main .creations-section .our-creations .grid {
-  background-image: url(../images/mobile/image-grid.jpg);
-}
-
-main .creations-section .our-creations .up-above {
-  background-image: url(../images/mobile/image-from-above.jpg);
-}
-
-main .creations-section .our-creations .pocket-boreals {
-  background-image: url(../images/mobile/image-pocket-borealis.jpg);
-}
-
-main .creations-section .our-creations .curiosity {
-  background-image: url(../images/mobile/image-curiosity.jpg);
-}
-
-main .creations-section .our-creations .fisheye {
-  background-image: url(../images/mobile/image-fisheye.jpg);
+main .creations-section .our-creations .img-container:hover .middle .img-text {
+  color: black;
 }
 
 main .creations-section button {
-  width: 200px;
+  width: 190px;
   height: 50px;
-  border: 2px solid black;
+  border: 1px solid black;
   margin: 10px calc(50% - 100px);
-  font-size: 1.3rem;
+  font-size: 1rem;
+  font-family: "Alata";
+  font-weight: 200;
+  letter-spacing: .5rem;
   cursor: pointer;
 }
 
@@ -209,6 +249,25 @@ footer {
   height: 450px;
   background-color: black;
   margin-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+footer .footer-logo {
+  height: 32px;
+  width: 192px;
+  background-image: url(../images/logo.svg);
 }
 
 footer .footer-links {
@@ -224,14 +283,9 @@ footer .footer-links {
           align-items: center;
 }
 
-footer .footer-links strong {
-  font-size: 1.5rem;
-  color: white;
-  margin: 50px auto 20px auto;
-}
-
 footer .footer-links span {
   font-size: 1rem;
+  font-family: "Alata";
   color: white;
   margin: 10px;
 }
@@ -268,7 +322,7 @@ footer .social .pinterest {
   height: 24px;
   width: 24px;
   margin: 0 10px;
-  background-image: url(../images/-pinterest.svg);
+  background-image: url(../images/icon-pinterest.svg);
 }
 
 footer .social .instagram {
@@ -280,9 +334,10 @@ footer .social .instagram {
 
 footer .rights {
   max-width: 100%;
-  margin: 20px calc(50% - 130px);
+  margin: 20px calc(50% - 180px);
   color: #8c8c8c;
   font-size: 1rem;
+  font-family: "Alata";
   text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

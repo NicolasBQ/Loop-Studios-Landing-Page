@@ -5,6 +5,10 @@ $colors: (
     very-dark-gray: hsl(0, 0%, 41%)
 );
 
+$titles-font: 'Josefin Sans';
+$texts-font: 'Alata';
+
+
 @function color($color-name) {
     @return map-get($colors , $color-name )
 };
@@ -19,26 +23,54 @@ body {
 header {
     .mobile-menu {
         display: none;
+        position: absolute;
+        z-index: -1;
         background-color: color(black);
-        height: 100%;
+        height: 100vh;
+        width: 100%;
         div {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-
+            align-items: center;
+    
             .logo {
-                color: color(white);
-                font-size: 1.5rem;
-                font-weight: bold;
-                padding: 35px;
+                height: 32px;
+                width: 192px;
+                margin: 35px 0 35px 35px;
+                background-image: url(../images/logores2.png);
             }
             .close-btn {
-                padding: 35px;
-                background-image: url(../images/mobile/icon-close.svg);
+                height: 20px;
+                width: 20px;
+                margin: 35px 35px 35px 0;
+                background-image: url(../images/icon-close.svg);
+                cursor: pointer;
+            }
+        }
+        .mobile-links {
+            display: none;
+            height: 100%;
+            width: 100%;
+            margin-top: 50%;
+    
+             li {
+                margin-top: 20px; 
+    
+                 a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: color(white);
+                    font-size: 1.5rem;    
+                    font-family: $titles-font;          
+                }
+                a:hover {
+                    color: color(dark-gray);
+                }
             }
         }
     }
-    .hero {     
+    .hero {   
         height: 730px;
         width: 100%;
         min-width: 320px;
@@ -48,21 +80,24 @@ header {
         z-index: -1;        
     }
         
-    .bar-name {
-        color: color(white);
-        font-size: 1.5rem;
-        font-weight: bold;
-        padding: 35px;
-    }
     .nav-bar {
+        display: flex;
         max-width: 100%;
         height: auto;
         display: flex;
         flex-direction: row; 
         justify-content: space-between;
-
+        align-items: center;
+        
+        .bar-name {
+            height: 32px;
+            width: 192px;
+            margin: 35px 0 35px 35px;
+            background-image: url(../images/logo.svg);
+        }
         .burguer {
-            margin: 35px;
+            margin: 35px 35px 35px 0;
+            cursor: pointer;
             span {
                 height: 2px;
                 width: 25px;
@@ -70,10 +105,6 @@ header {
                 display: block;
                 margin-bottom: 5px;
             }
-        }
-
-        .nav-links{
-            display: none;
         }
     }
     .nav-box {
@@ -86,7 +117,10 @@ header {
             color: color(white);
             margin: 0;
             padding: 20px;
-            font-size: 2.3rem;
+            font-size: 2.5rem;
+            line-height: 2.5rem;
+            font-weight: 300;
+            font-family: $titles-font;
         }
     }
 }
@@ -101,83 +135,92 @@ main {
             object-fit: cover;
         }
         h2 {
-            font-size: 2rem;
-            font-weight: 400;
             margin: auto;
+            font-size: 2rem;
+            font-weight: 300;
+            font-family: $titles-font;
+            line-height: 2rem;
             text-align: center;
         }
         p {
-            font-size: 1rem;
-            font-weight: 300;
-            line-height: 1.5rem;
             margin: auto 60px;
-            color: color(dark-gray);
+            font-size: 1rem;
+            font-weight: 400;
+            font-family: $texts-font;
+            line-height: 1.8rem;
             text-align: center;
+            color: color(dark-gray);
         }
 
     }
     .creations-section {
         h2 {
             font-size: 2rem;
-            font-weight: 400;
+            font-weight: 300;
+            font-family: $titles-font;
             margin: 90px auto 40px auto;
             text-align: center;
         }
         .our-creations {
-            div {
-                height: 120px;
-                width: 327px;
-                margin: 30px auto;
-                box-shadow: inset 0px 0px 70px 0px color(black);
-                cursor: pointer;
-
-                h3 {
-                    color: color(white);
-                    width: 130px;
-                    font-size: 1.5rem;
-                    padding: 40px 20px;
-                }
-
+            .img-container {
+                    position: relative;
+                    height: 120px;
+                    width: 327px;
+                    margin: 30px auto;
+                    cursor: pointer;
+                    box-shadow: inset 40px 0px 50px -5px color(black);
+                    img {
+                        opacity: 1;
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        position: absolute;
+                        z-index: -2;
+                    }
+                    
+                    .middle {
+                        position: absolute;
+                        top: 67%;
+                        left: 25%;
+                        transform: translate(-50%, -50%);
+                        transform: translate(-50%, -50%);
+                        text-align: start;
+                        
+                        .img-text {
+                            font-size: 1.5rem;
+                            font-family: $titles-font;
+                            font-weight: 300;
+                            line-height: 1.5rem;
+                            color: color(white);
+                            width: 130px;
+                            padding: 40px 20px;
+                        }
+                    }
+    
+    
             }
-            div:hover {
-                background-color: color(dark-gray);
-                h3 {
-                    color: color(black);
+            .img-container:hover {
+                box-shadow: none;
+                img {
+                    opacity: 0.3;
+                }
+                .middle {
                     opacity: 1;
+                    .img-text {
+                        color: black;
+                    }
                 }
-            }
-            .deep-earth {
-                background-image: url(../images/mobile/image-deep-earth.jpg);
-                object-fit: cover;
-            }
-            .night-arcade {
-                background-image: url(../images/mobile/image-night-arcade.jpg);
-            }
-            .soccer-team {
-                background-image: url(../images/mobile/image-soccer-team.jpg);
-            }
-            .grid {
-                background-image: url(../images/mobile/image-grid.jpg);
-            }
-            .up-above {
-                background-image: url(../images/mobile/image-from-above.jpg)
-            }
-            .pocket-boreals {
-                background-image: url(../images/mobile/image-pocket-borealis.jpg);
-            }
-            .curiosity {
-                background-image: url(../images/mobile/image-curiosity.jpg)
-            }
-            .fisheye {
-                background-image: url(../images/mobile/image-fisheye.jpg);
             }
         }
         button {
-            width: 200px;
+            width: 190px;
             height: 50px;
-            border: 2px solid color(black);
+            border: 1px solid color(black);
             margin: 10px calc(50% - 100px);
-            font-size: 1.3rem;
+            font-size: 1rem;
+            font-family: $texts-font;
+            font-weight: 200;
+            letter-spacing: .5rem;
             cursor: pointer;
 
         }
@@ -192,17 +235,23 @@ footer {
     height: 450px;
     background-color: color(black);
     margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .footer-logo {
+        height: 32px;
+        width: 192px;
+        background-image: url(../images/logo.svg);
+    }
     .footer-links {
         display: flex;
         flex-direction: column;
         align-items: center;
-        strong {
-            font-size: 1.5rem;
-            color: color(white);
-            margin: 50px auto 20px auto ;
-        }
         span {
-            font-size: 1rem;;
+            font-size: 1rem;
+            font-family: $texts-font;
             color: color(white);
             margin: 10px;
         }
@@ -228,7 +277,7 @@ footer {
             height: 24px;
             width: 24px;
             margin: 0 10px;
-            background-image: url(../images/-pinterest.svg);
+            background-image: url(../images/icon-pinterest.svg)
         }
         .instagram {
             height: 24px;
@@ -239,9 +288,10 @@ footer {
     }
     .rights {
        max-width: 100%;
-       margin: 20px calc(50% - 130px);
+       margin: 20px calc(50% - 180px);
        color: color(dark-gray);
        font-size: 1rem;
+       font-family: $texts-font;
        text-align: center;
     }
 }
