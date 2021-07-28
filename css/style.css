@@ -1,1 +1,288 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header .mobile-menu {
+  display: none;
+  background-color: black;
+  height: 100%;
+}
+
+header .mobile-menu div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .mobile-menu div .logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 35px;
+}
+
+header .mobile-menu div .close-btn {
+  padding: 35px;
+  background-image: url(../images/mobile/icon-close.svg);
+}
+
+header .hero {
+  height: 730px;
+  width: 100%;
+  min-width: 320px;
+  background-image: url(../images/mobile/image-hero.jpg);
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  z-index: -1;
+}
+
+header .bar-name {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 35px;
+}
+
+header .nav-bar {
+  max-width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .nav-bar .burguer {
+  margin: 35px;
+}
+
+header .nav-bar .burguer span {
+  height: 2px;
+  width: 25px;
+  background-color: white;
+  display: block;
+  margin-bottom: 5px;
+}
+
+header .nav-bar .nav-links {
+  display: none;
+}
+
+header .nav-box {
+  width: 320px;
+  height: 200px;
+  margin: 155px auto;
+  border: 2px solid white;
+}
+
+header .nav-box h1 {
+  color: white;
+  margin: 0;
+  padding: 20px;
+  font-size: 2.3rem;
+}
+
+main .interactive-section .interactive {
+  height: 225px;
+  width: 325px;
+  margin: 360px auto 40px auto;
+  background-image: url(../images/mobile/image-interactive.jpg);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .interactive-section h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: auto;
+  text-align: center;
+}
+
+main .interactive-section p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+  margin: auto 60px;
+  color: #8c8c8c;
+  text-align: center;
+}
+
+main .creations-section h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 90px auto 40px auto;
+  text-align: center;
+}
+
+main .creations-section .our-creations div {
+  height: 120px;
+  width: 327px;
+  margin: 30px auto;
+  -webkit-box-shadow: inset 0px 0px 70px 0px black;
+          box-shadow: inset 0px 0px 70px 0px black;
+  cursor: pointer;
+}
+
+main .creations-section .our-creations div h3 {
+  color: white;
+  width: 130px;
+  font-size: 1.5rem;
+  padding: 40px 20px;
+}
+
+main .creations-section .our-creations div:hover {
+  background-color: #8c8c8c;
+}
+
+main .creations-section .our-creations div:hover h3 {
+  color: black;
+  opacity: 1;
+}
+
+main .creations-section .our-creations .deep-earth {
+  background-image: url(../images/mobile/image-deep-earth.jpg);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .creations-section .our-creations .night-arcade {
+  background-image: url(../images/mobile/image-night-arcade.jpg);
+}
+
+main .creations-section .our-creations .soccer-team {
+  background-image: url(../images/mobile/image-soccer-team.jpg);
+}
+
+main .creations-section .our-creations .grid {
+  background-image: url(../images/mobile/image-grid.jpg);
+}
+
+main .creations-section .our-creations .up-above {
+  background-image: url(../images/mobile/image-from-above.jpg);
+}
+
+main .creations-section .our-creations .pocket-boreals {
+  background-image: url(../images/mobile/image-pocket-borealis.jpg);
+}
+
+main .creations-section .our-creations .curiosity {
+  background-image: url(../images/mobile/image-curiosity.jpg);
+}
+
+main .creations-section .our-creations .fisheye {
+  background-image: url(../images/mobile/image-fisheye.jpg);
+}
+
+main .creations-section button {
+  width: 200px;
+  height: 50px;
+  border: 2px solid black;
+  margin: 10px calc(50% - 100px);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+main .creations-section button:hover {
+  background-color: black;
+  color: white;
+}
+
+footer {
+  height: 450px;
+  background-color: black;
+  margin-top: 80px;
+}
+
+footer .footer-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer-links strong {
+  font-size: 1.5rem;
+  color: white;
+  margin: 50px auto 20px auto;
+}
+
+footer .footer-links span {
+  font-size: 1rem;
+  color: white;
+  margin: 10px;
+}
+
+footer .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+}
+
+footer .social .facebook {
+  height: 24px;
+  width: 24px;
+  margin: 0 10px;
+  background-image: url(../images/icon-facebook.svg);
+}
+
+footer .social .twitter {
+  height: 20px;
+  width: 24px;
+  margin: 0 10px;
+  background-image: url(../images/icon-twitter.svg);
+}
+
+footer .social .pinterest {
+  height: 24px;
+  width: 24px;
+  margin: 0 10px;
+  background-image: url(../images/-pinterest.svg);
+}
+
+footer .social .instagram {
+  height: 24px;
+  width: 24px;
+  margin: 0 10px;
+  background-image: url(../images/icon-instagram.svg);
+}
+
+footer .rights {
+  max-width: 100%;
+  margin: 20px calc(50% - 130px);
+  color: #8c8c8c;
+  font-size: 1rem;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,247 @@
+$colors: ( 
+    white: hsl(0, 0%, 100%),
+    black: hsl(0, 0%, 0%),
+    dark-gray: hsl(0, 0%, 55%),
+    very-dark-gray: hsl(0, 0%, 41%)
+);
+
+@function color($color-name) {
+    @return map-get($colors , $color-name )
+};
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+};
+
+header {
+    .mobile-menu {
+        display: none;
+        background-color: color(black);
+        height: 100%;
+        div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .logo {
+                color: color(white);
+                font-size: 1.5rem;
+                font-weight: bold;
+                padding: 35px;
+            }
+            .close-btn {
+                padding: 35px;
+                background-image: url(../images/mobile/icon-close.svg);
+            }
+        }
+    }
+    .hero {     
+        height: 730px;
+        width: 100%;
+        min-width: 320px;
+        background-image: url(../images/mobile/image-hero.jpg);
+        object-fit: cover;
+        position: absolute;
+        z-index: -1;        
+    }
+        
+    .bar-name {
+        color: color(white);
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 35px;
+    }
+    .nav-bar {
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between;
+
+        .burguer {
+            margin: 35px;
+            span {
+                height: 2px;
+                width: 25px;
+                background-color: color(white);
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+
+        .nav-links{
+            display: none;
+        }
+    }
+    .nav-box {
+        width: 320px;
+        height: 200px;
+        margin: 155px auto;
+        border: 2px solid color(white);
+
+        h1 {
+            color: color(white);
+            margin: 0;
+            padding: 20px;
+            font-size: 2.3rem;
+        }
+    }
+}
+
+main {
+    .interactive-section {
+        .interactive {
+            height: 225px;
+            width: 325px;
+            margin: 360px auto 40px auto;
+            background-image: url(../images/mobile/image-interactive.jpg);
+            object-fit: cover;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin: auto;
+            text-align: center;
+        }
+        p {
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.5rem;
+            margin: auto 60px;
+            color: color(dark-gray);
+            text-align: center;
+        }
+
+    }
+    .creations-section {
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin: 90px auto 40px auto;
+            text-align: center;
+        }
+        .our-creations {
+            div {
+                height: 120px;
+                width: 327px;
+                margin: 30px auto;
+                box-shadow: inset 0px 0px 70px 0px color(black);
+                cursor: pointer;
+
+                h3 {
+                    color: color(white);
+                    width: 130px;
+                    font-size: 1.5rem;
+                    padding: 40px 20px;
+                }
+
+            }
+            div:hover {
+                background-color: color(dark-gray);
+                h3 {
+                    color: color(black);
+                    opacity: 1;
+                }
+            }
+            .deep-earth {
+                background-image: url(../images/mobile/image-deep-earth.jpg);
+                object-fit: cover;
+            }
+            .night-arcade {
+                background-image: url(../images/mobile/image-night-arcade.jpg);
+            }
+            .soccer-team {
+                background-image: url(../images/mobile/image-soccer-team.jpg);
+            }
+            .grid {
+                background-image: url(../images/mobile/image-grid.jpg);
+            }
+            .up-above {
+                background-image: url(../images/mobile/image-from-above.jpg)
+            }
+            .pocket-boreals {
+                background-image: url(../images/mobile/image-pocket-borealis.jpg);
+            }
+            .curiosity {
+                background-image: url(../images/mobile/image-curiosity.jpg)
+            }
+            .fisheye {
+                background-image: url(../images/mobile/image-fisheye.jpg);
+            }
+        }
+        button {
+            width: 200px;
+            height: 50px;
+            border: 2px solid color(black);
+            margin: 10px calc(50% - 100px);
+            font-size: 1.3rem;
+            cursor: pointer;
+
+        }
+        button:hover {
+            background-color: color(black);
+            color: color(white);
+        }
+    }
+}
+
+footer {
+    height: 450px;
+    background-color: color(black);
+    margin-top: 80px;
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        strong {
+            font-size: 1.5rem;
+            color: color(white);
+            margin: 50px auto 20px auto ;
+        }
+        span {
+            font-size: 1rem;;
+            color: color(white);
+            margin: 10px;
+        }
+    }
+    .social {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 30px;
+        .facebook {
+            height: 24px;
+            width: 24px;
+            margin: 0 10px;
+            background-image: url(../images/icon-facebook.svg);
+        }
+        .twitter {
+            height: 20px;
+            width: 24px;
+            margin: 0 10px;
+            background-image: url(../images/icon-twitter.svg);
+        }
+        .pinterest {
+            height: 24px;
+            width: 24px;
+            margin: 0 10px;
+            background-image: url(../images/-pinterest.svg);
+        }
+        .instagram {
+            height: 24px;
+            width: 24px;
+            margin: 0 10px;
+            background-image: url(../images/icon-instagram.svg);
+        }
+    }
+    .rights {
+       max-width: 100%;
+       margin: 20px calc(50% - 130px);
+       color: color(dark-gray);
+       font-size: 1rem;
+       text-align: center;
+    }
+}
