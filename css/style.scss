@@ -13,6 +13,14 @@ $texts-font: 'Alata';
     @return map-get($colors , $color-name )
 };
 
+$ipad: 640px;
+
+@mixin ipad {
+    @media (min-width: #{$ipad}) {
+        @content
+    }
+}
+
 body {
     height: 100%;
     margin: 0;
@@ -26,7 +34,7 @@ header {
         position: absolute;
         z-index: -1;
         background-color: color(black);
-        height: 100vh;
+        height: 100%;
         width: 100%;
         div {
             display: flex;
@@ -77,7 +85,7 @@ header {
         background-image: url(../images/mobile/image-hero.jpg);
         object-fit: cover;
         position: absolute;
-        z-index: -1;        
+        z-index: -1; 
     }
         
     .nav-bar {
@@ -92,7 +100,7 @@ header {
         .bar-name {
             height: 32px;
             width: 192px;
-            margin: 35px 0 35px 35px;
+            margin: 25px 0 25px 45px;
             background-image: url(../images/logo.svg);
         }
         .burguer {
@@ -106,6 +114,9 @@ header {
                 margin-bottom: 5px;
             }
         }
+    }
+    .nav-links {
+        display: none;
     }
     .nav-box {
         width: 320px;
@@ -123,6 +134,45 @@ header {
             font-family: $titles-font;
         }
     }
+    @include ipad {
+        .hero {
+            height: 330px;
+            width: 100%;
+            min-width: 720px;
+            background-image: url(../images/desktop/image-hero-ipad.jpg);
+        }
+        .burguer {
+            display: none;
+        }
+        .nav-links {
+            display: block;
+            margin: 25px 35px 0 0;
+            ul {
+                display: flex;
+                li {
+                    display: block;
+                    list-style: none;
+                    padding-bottom: 5px;
+                    margin: 0 10px;
+                    a {
+                        display: block;
+                        text-decoration: none;
+                        font-size: .8rem;
+                        font-family: $texts-font;
+                        color: white;
+                    }
+                }
+                li:hover {
+                    border-bottom: 2px solid white;
+                }
+            }
+        }
+        .nav-box {
+            width: 350px;
+            height: 150px;
+            margin: 20px 0px 0px 45px;
+        }
+    }
 }
 
 main {
@@ -134,26 +184,60 @@ main {
             background-image: url(../images/mobile/image-interactive.jpg);
             object-fit: cover;
         }
-        h2 {
-            margin: auto;
-            font-size: 2rem;
-            font-weight: 300;
-            font-family: $titles-font;
-            line-height: 2rem;
-            text-align: center;
+        .leader {
+            h2 {
+                margin: auto;
+                font-size: 2rem;
+                font-weight: 300;
+                font-family: $titles-font;
+                line-height: 2rem;
+                text-align: center;
+            }
+            p {
+                margin: auto 60px;
+                font-size: 1rem;
+                font-weight: 400;
+                font-family: $texts-font;
+                line-height: 1.8rem;
+                text-align: center;
+                color: color(dark-gray);
+            }
         }
-        p {
-            margin: auto 60px;
-            font-size: 1rem;
-            font-weight: 400;
-            font-family: $texts-font;
-            line-height: 1.8rem;
-            text-align: center;
-            color: color(dark-gray);
+        @include ipad {
+            margin-bottom: 150px;
+            .interactive {
+                height: 250px;
+                width: 365px;
+                background-image: url(../images/desktop/image-interactive.jpg);
+                position: relative;
+                z-index: -1;
+                margin: 100px 0px 40px 45px;
+            }
+            .leader {
+                height: 250px;
+                width: 300px;
+                background-color: white;
+                position: absolute;
+                bottom: 30%;
+                left: 43%;
+                h2 {
+                    text-align: center;
+                    width: 300px;
+                    padding: 60px 0px 5px 40px;
+                }
+                p {
+                    margin: auto;
+                    width: 320px;
+                    text-align: justify;
+                    font-size: .6rem;
+                    line-height: 1.5rem;
+                    padding: 5px 0px 0px 60px;
+                }
+            }
         }
-
     }
     .creations-section {
+        
         h2 {
             font-size: 2rem;
             font-weight: 300;
@@ -161,73 +245,128 @@ main {
             margin: 90px auto 40px auto;
             text-align: center;
         }
-        .our-creations {
-            .img-container {
-                    position: relative;
-                    height: 120px;
-                    width: 327px;
-                    margin: 30px auto;
-                    cursor: pointer;
-                    box-shadow: inset 40px 0px 50px -5px color(black);
-                    img {
-                        opacity: 1;
-                        display: block;
-                        width: 100%;
-                        height: auto;
-                        position: absolute;
-                        z-index: -2;
-                    }
-                    
-                    .middle {
-                        position: absolute;
-                        top: 67%;
-                        left: 25%;
-                        transform: translate(-50%, -50%);
-                        transform: translate(-50%, -50%);
-                        text-align: start;
-                        
-                        .img-text {
-                            font-size: 1.5rem;
-                            font-family: $titles-font;
-                            font-weight: 300;
-                            line-height: 1.5rem;
-                            color: color(white);
-                            width: 130px;
-                            padding: 40px 20px;
-                        }
-                    }
-    
-    
-            }
-            .img-container:hover {
-                box-shadow: none;
-                img {
-                    opacity: 0.3;
-                }
-                .middle {
-                    opacity: 1;
-                    .img-text {
-                        color: black;
-                    }
+        .our-creations-mobile {
+            div {
+                height: 120px;
+                width: 327px;
+                margin: 30px auto;
+                box-shadow: inset 0px 0px 70px 0px color(black);
+                cursor: pointer;
+
+                h3 {
+                    color: color(white);
+                    width: 130px;
+                    font-size: 1.5rem;
+                    padding: 40px 20px;
                 }
             }
+            .deep-earth {
+                background-image: url(../images/mobile/image-deep-earth.jpg);
+                object-fit: cover;
+            }
+            .night-arcade {
+                background-image: url(../images/mobile/image-night-arcade.jpg);
+            }
+            .soccer-team {
+                background-image: url(../images/mobile/image-soccer-team.jpg);
+            }
+            .grid {
+                background-image: url(../images/mobile/image-grid.jpg);
+            }
+            .up-above {
+                background-image: url(../images/mobile/image-from-above.jpg)
+            }
+            .pocket-boreals {
+                background-image: url(../images/mobile/image-pocket-borealis.jpg);
+            }
+            .curiosity {
+                background-image: url(../images/mobile/image-curiosity.jpg)
+            }
+            .fisheye {
+                background-image: url(../images/mobile/image-fisheye.jpg);
+            }      
         }
-        button {
-            width: 190px;
-            height: 50px;
-            border: 1px solid color(black);
-            margin: 10px calc(50% - 100px);
-            font-size: 1rem;
-            font-family: $texts-font;
-            font-weight: 200;
-            letter-spacing: .5rem;
-            cursor: pointer;
+
+        .our-creations {
+            display: none;
+            .img-container {
+                position: relative;
+                height: 225px;
+                width: 130px;
+                margin: 30px 0;
+                cursor: pointer;
+                box-shadow: inset 0px 10px 60px 0px color(black);
+                img {
+                    opacity: 1;
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    z-index: -2;
+            }         
+            .middle {
+                position: absolute;
+                top: 80%;
+                left: 53%;
+                transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                text-align: start;
+                
+                .img-text {
+                    font-size: 1.5rem;
+                    font-family: $titles-font;
+                    font-weight: 300;
+                    line-height: 1.5rem;
+                    color: color(white);
+                    width: 130px;
+                    padding: 40px 20px;
+                }
+            }
 
         }
-        button:hover {
+        .img-container:hover {
+            box-shadow: none;
+            img {
+                opacity: 0.3;
+            }
+            .middle {
+                opacity: 1;
+                .img-text {
+                    color: black;
+                }
+            }
+        }
+    }
+    .section-button {
+        width: 190px;
+        height: 50px;
+        border: 1px solid color(black);
+        margin: 10px calc(50% - 100px);
+        font-size: 1rem;
+        font-family: $texts-font;
+        font-weight: 200;
+        letter-spacing: .5rem;
+        cursor: pointer; 
+        }
+        .section-button:hover {
             background-color: color(black);
             color: color(white);
         }
+
+    @include ipad {
+        margin-left: 45px;
+        h2 {
+            text-align: start;
+        }
+        .our-creations-mobile {
+            display: none;
+        }
+        .our-creations {
+            display: grid;
+            grid-template-columns: repeat(4, 180px);
+            grid-template-rows: repeat(2, 1fr);
+        }
+    }
     }
 }
 

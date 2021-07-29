@@ -11,7 +11,7 @@ header .mobile-menu {
   position: absolute;
   z-index: -1;
   background-color: black;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -102,7 +102,7 @@ header .nav-bar {
 header .nav-bar .bar-name {
   height: 32px;
   width: 192px;
-  margin: 35px 0 35px 35px;
+  margin: 25px 0 25px 45px;
   background-image: url(../images/logo.svg);
 }
 
@@ -117,6 +117,10 @@ header .nav-bar .burguer span {
   background-color: white;
   display: block;
   margin-bottom: 5px;
+}
+
+header .nav-links {
+  display: none;
 }
 
 header .nav-box {
@@ -136,6 +140,48 @@ header .nav-box h1 {
   font-family: "Josefin Sans";
 }
 
+@media (min-width: 640px) {
+  header .hero {
+    height: 330px;
+    width: 100%;
+    min-width: 720px;
+    background-image: url(../images/desktop/image-hero-ipad.jpg);
+  }
+  header .burguer {
+    display: none;
+  }
+  header .nav-links {
+    display: block;
+    margin: 25px 35px 0 0;
+  }
+  header .nav-links ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .nav-links ul li {
+    display: block;
+    list-style: none;
+    padding-bottom: 5px;
+    margin: 0 10px;
+  }
+  header .nav-links ul li a {
+    display: block;
+    text-decoration: none;
+    font-size: .8rem;
+    font-family: "Alata";
+    color: white;
+  }
+  header .nav-links ul li:hover {
+    border-bottom: 2px solid white;
+  }
+  header .nav-box {
+    width: 350px;
+    height: 150px;
+    margin: 20px 0px 0px 45px;
+  }
+}
+
 main .interactive-section .interactive {
   height: 225px;
   width: 325px;
@@ -145,7 +191,7 @@ main .interactive-section .interactive {
      object-fit: cover;
 }
 
-main .interactive-section h2 {
+main .interactive-section .leader h2 {
   margin: auto;
   font-size: 2rem;
   font-weight: 300;
@@ -154,7 +200,7 @@ main .interactive-section h2 {
   text-align: center;
 }
 
-main .interactive-section p {
+main .interactive-section .leader p {
   margin: auto 60px;
   font-size: 1rem;
   font-weight: 400;
@@ -162,6 +208,41 @@ main .interactive-section p {
   line-height: 1.8rem;
   text-align: center;
   color: #8c8c8c;
+}
+
+@media (min-width: 640px) {
+  main .interactive-section {
+    margin-bottom: 150px;
+  }
+  main .interactive-section .interactive {
+    height: 250px;
+    width: 365px;
+    background-image: url(../images/desktop/image-interactive.jpg);
+    position: relative;
+    z-index: -1;
+    margin: 100px 0px 40px 45px;
+  }
+  main .interactive-section .leader {
+    height: 250px;
+    width: 300px;
+    background-color: white;
+    position: absolute;
+    bottom: 30%;
+    left: 43%;
+  }
+  main .interactive-section .leader h2 {
+    text-align: center;
+    width: 300px;
+    padding: 60px 0px 5px 40px;
+  }
+  main .interactive-section .leader p {
+    margin: auto;
+    width: 320px;
+    text-align: justify;
+    font-size: .6rem;
+    line-height: 1.5rem;
+    padding: 5px 0px 0px 60px;
+  }
 }
 
 main .creations-section h2 {
@@ -172,14 +253,68 @@ main .creations-section h2 {
   text-align: center;
 }
 
-main .creations-section .our-creations .img-container {
-  position: relative;
+main .creations-section .our-creations-mobile div {
   height: 120px;
   width: 327px;
   margin: 30px auto;
+  -webkit-box-shadow: inset 0px 0px 70px 0px black;
+          box-shadow: inset 0px 0px 70px 0px black;
   cursor: pointer;
-  -webkit-box-shadow: inset 40px 0px 50px -5px black;
-          box-shadow: inset 40px 0px 50px -5px black;
+}
+
+main .creations-section .our-creations-mobile div h3 {
+  color: white;
+  width: 130px;
+  font-size: 1.5rem;
+  padding: 40px 20px;
+}
+
+main .creations-section .our-creations-mobile .deep-earth {
+  background-image: url(../images/mobile/image-deep-earth.jpg);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .creations-section .our-creations-mobile .night-arcade {
+  background-image: url(../images/mobile/image-night-arcade.jpg);
+}
+
+main .creations-section .our-creations-mobile .soccer-team {
+  background-image: url(../images/mobile/image-soccer-team.jpg);
+}
+
+main .creations-section .our-creations-mobile .grid {
+  background-image: url(../images/mobile/image-grid.jpg);
+}
+
+main .creations-section .our-creations-mobile .up-above {
+  background-image: url(../images/mobile/image-from-above.jpg);
+}
+
+main .creations-section .our-creations-mobile .pocket-boreals {
+  background-image: url(../images/mobile/image-pocket-borealis.jpg);
+}
+
+main .creations-section .our-creations-mobile .curiosity {
+  background-image: url(../images/mobile/image-curiosity.jpg);
+}
+
+main .creations-section .our-creations-mobile .fisheye {
+  background-image: url(../images/mobile/image-fisheye.jpg);
+}
+
+main .creations-section .our-creations {
+  display: none;
+}
+
+main .creations-section .our-creations .img-container {
+  position: relative;
+  height: 225px;
+  width: 130px;
+  margin: 30px 0;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0px 10px 60px 0px black;
+          box-shadow: inset 0px 10px 60px 0px black;
 }
 
 main .creations-section .our-creations .img-container img {
@@ -193,8 +328,8 @@ main .creations-section .our-creations .img-container img {
 
 main .creations-section .our-creations .img-container .middle {
   position: absolute;
-  top: 67%;
-  left: 25%;
+  top: 80%;
+  left: 53%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -228,7 +363,7 @@ main .creations-section .our-creations .img-container:hover .middle .img-text {
   color: black;
 }
 
-main .creations-section button {
+main .creations-section .section-button {
   width: 190px;
   height: 50px;
   border: 1px solid black;
@@ -240,9 +375,29 @@ main .creations-section button {
   cursor: pointer;
 }
 
-main .creations-section button:hover {
+main .creations-section .section-button:hover {
   background-color: black;
   color: white;
+}
+
+@media (min-width: 640px) {
+  main .creations-section {
+    margin-left: 45px;
+  }
+  main .creations-section h2 {
+    text-align: start;
+  }
+  main .creations-section .our-creations-mobile {
+    display: none;
+  }
+  main .creations-section .our-creations {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (180px)[4];
+        grid-template-columns: repeat(4, 180px);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
 }
 
 footer {
