@@ -13,10 +13,24 @@ $texts-font: 'Alata';
     @return map-get($colors , $color-name )
 };
 
-$ipad: 640px;
+$small: 640px;
+@mixin small {
+    @media (min-width: #{$small}) {
+        @content
+    }
+    
+}
 
-@mixin ipad {
-    @media (min-width: #{$ipad}) {
+$medium: 1024px;
+@mixin medium {
+    @media (min-width: #{$medium}) {
+        @content
+    }
+}
+
+$large: 1400px;
+@mixin large {
+    @media (min-width: #{$large}) {
         @content
     }
 }
@@ -58,7 +72,6 @@ header {
         }
         .mobile-links {
             display: none;
-            height: 100%;
             width: 100%;
             margin-top: 50%;
     
@@ -91,11 +104,10 @@ header {
     .nav-bar {
         display: flex;
         max-width: 100%;
-        height: auto;
+        height: 100px;
         display: flex;
         flex-direction: row; 
         justify-content: space-between;
-        align-items: center;
         
         .bar-name {
             height: 32px;
@@ -134,11 +146,11 @@ header {
             font-family: $titles-font;
         }
     }
-    @include ipad {
+    @include small {
         .hero {
             height: 330px;
             width: 100%;
-            min-width: 720px;
+            min-width: 770px;
             background-image: url(../images/desktop/image-hero-ipad.jpg);
         }
         .burguer {
@@ -146,11 +158,10 @@ header {
         }
         .nav-links {
             display: block;
-            margin: 25px 35px 0 0;
+            margin: 15px 35px 0 0;
             ul {
                 display: flex;
                 li {
-                    display: block;
                     list-style: none;
                     padding-bottom: 5px;
                     margin: 0 10px;
@@ -161,26 +172,71 @@ header {
                         font-family: $texts-font;
                         color: white;
                     }
-                }
-                li:hover {
-                    border-bottom: 2px solid white;
+                    a:hover {
+                       border-bottom: 2px solid white; 
+                    }
                 }
             }
         }
         .nav-box {
             width: 350px;
             height: 150px;
-            margin: 20px 0px 0px 45px;
+            margin: 0px 0px 0px 45px;
+        }
+    }
+    @include medium {
+            .nav-bar {
+                .bar-name {
+                    margin: 30px 100px;
+                }
+            }
+            .hero {
+                height: 575px;
+                width: 100%;
+                min-width: 1000px;
+                background-image: url(../images/desktop/image-hero-desktop.png);
+            }
+            .nav-links {
+                margin: 15px 100px;
+                ul {
+                    li {
+                        a {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+            .nav-box {
+                width: 500px;
+                height: 250px;
+                margin: 30px 100px;
+                h1 {
+                    font-size: 4rem;
+                    line-height: 4.5rem;
+                }
+            }
+            
+    }
+    @include large {
+        .hero {
+            height: 722px;
+            width: 100%;
+            min-width: 1400px;
+            background-image: url(../images/desktop/image-hero-large.png);
+        }
+        .nav-box {
+            margin-top: 100px;
         }
     }
 }
 
 main {
     .interactive-section {
+        margin: 360px auto 0px auto;
         .interactive {
             height: 225px;
             width: 325px;
-            margin: 360px auto 40px auto;
+            margin: 45px auto;
             background-image: url(../images/mobile/image-interactive.jpg);
             object-fit: cover;
         }
@@ -203,23 +259,25 @@ main {
                 color: color(dark-gray);
             }
         }
-        @include ipad {
-            margin-bottom: 150px;
+        @include small {
+            position: relative;
+            margin: 150px 45px;
             .interactive {
                 height: 250px;
                 width: 365px;
                 background-image: url(../images/desktop/image-interactive.jpg);
                 position: relative;
+                margin: auto;
+                right: 150px;
                 z-index: -1;
-                margin: 100px 0px 40px 45px;
             }
             .leader {
                 height: 250px;
-                width: 300px;
+                width: 400px;
                 background-color: white;
                 position: absolute;
-                bottom: 30%;
-                left: 43%;
+                top: 40%;
+                left: 46.6%;
                 h2 {
                     text-align: center;
                     width: 300px;
@@ -235,9 +293,29 @@ main {
                 }
             }
         }
+        @include medium {
+            margin: 250px auto;
+            .interactive {
+                margin: auto;
+                width: 426px;
+                height: 290px;
+                right: 135px;
+                background-image: url(../images/desktop/image-interactive-ld.png);
+            }
+            .leader {
+                height: 300px;
+                width: 400px;
+                p {
+                    font-size: .8rem;
+                }
+            }
+        }
+        @include large {
+            margin-top: 350px;
+        }
     }
     .creations-section {
-        
+        margin-top: 200px;
         h2 {
             font-size: 2rem;
             font-weight: 300;
@@ -257,6 +335,8 @@ main {
                     color: color(white);
                     width: 130px;
                     font-size: 1.5rem;
+                    font-family: $titles-font;
+                    font-weight: 300;
                     padding: 40px 20px;
                 }
             }
@@ -353,8 +433,9 @@ main {
             color: color(white);
         }
 
-    @include ipad {
-        margin-left: 45px;
+    @include small {
+        position: relative;
+        margin-left: calc(50% - 350px);
         h2 {
             text-align: start;
         }
@@ -362,9 +443,16 @@ main {
             display: none;
         }
         .our-creations {
+            margin: auto;
             display: grid;
-            grid-template-columns: repeat(4, 180px);
+            grid-template-columns: repeat(4, 190px);
             grid-template-rows: repeat(2, 1fr);
+        }
+        .section-button {
+            position: absolute;
+            bottom: 94%;
+            left: 515px;
+            margin: 0;
         }
     }
     }
@@ -372,65 +460,105 @@ main {
 
 footer {
     height: 450px;
-    background-color: color(black);
-    margin-top: 80px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-
-    .footer-logo {
-        height: 32px;
-        width: 192px;
-        background-image: url(../images/logo.svg);
-    }
-    .footer-links {
+    margin-top: 80px;
+    background-color: color(black);
+    .link-section {
         display: flex;
+        padding-top: 50px;
         flex-direction: column;
         align-items: center;
-        span {
+        .footer-logo {
+            height: 32px;
+            width: 192px;
+            background-image: url(../images/logores2.png);
+        }
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            align-items: center;
+
+            span {
+                font-size: 1rem;
+                font-family: $texts-font;
+                color: white;
+                padding-top: 20px; 
+                cursor: pointer;
+            }
+            span:hover {
+                border-bottom: 2px solid white;
+            }
+        }
+    }
+    .socials {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+        .socials-icons {
+            display: flex;
+            flex-direction: row;
+            justify-self: center;
+            padding-top: 20px;
+            span {
+                height: 24px;
+                width: 24px;
+                margin: 0px 10px;
+            }
+            .facebook {
+                background-image: url(../images/icon-facebook.svg);
+            }
+            .twitter {
+                height: 20px;
+                background-image: url(../images/icon-twitter.svg);
+            }
+            .pinterest {
+                background-image: url(../images/icon-pinterest.svg);
+            }
+            .instagram {
+                background-image: url(../images/icon-instagram.svg);
+            }
+        }
+        .rights {
             font-size: 1rem;
             font-family: $texts-font;
-            color: color(white);
-            margin: 10px;
+            color: color(dark-gray);
+            padding-top: 20px;
         }
     }
-    .social {
+    @include small {
+        height: 140px;
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        margin-top: 30px;
-        .facebook {
-            height: 24px;
-            width: 24px;
-            margin: 0 10px;
-            background-image: url(../images/icon-facebook.svg);
+        justify-content: space-between;
+        .link-section {
+            padding-top: 30px;
+            padding-left: 0;
+            .footer-logo {
+                align-self: flex-start;
+                margin-left: 45px;
+            }
+            .footer-links {
+                flex-direction: row;
+                padding-left:  35px;
+                padding-top: 20px;
+                span {
+                    padding: 0 10px;
+                }
+            }
         }
-        .twitter {
-            height: 20px;
-            width: 24px;
-            margin: 0 10px;
-            background-image: url(../images/icon-twitter.svg);
+        .socials {
+            padding-top: 15px;
+            padding-right: 25px;
+            .socials-icons {
+                align-self: flex-end;
+            }
+            .rights {
+                padding-top: 25px;
+                padding-right: 5px;
+            }
         }
-        .pinterest {
-            height: 24px;
-            width: 24px;
-            margin: 0 10px;
-            background-image: url(../images/icon-pinterest.svg)
-        }
-        .instagram {
-            height: 24px;
-            width: 24px;
-            margin: 0 10px;
-            background-image: url(../images/icon-instagram.svg);
-        }
-    }
-    .rights {
-       max-width: 100%;
-       margin: 20px calc(50% - 180px);
-       color: color(dark-gray);
-       font-size: 1rem;
-       font-family: $texts-font;
-       text-align: center;
     }
 }

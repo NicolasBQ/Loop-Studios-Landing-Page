@@ -48,7 +48,6 @@ header .mobile-menu div .close-btn {
 
 header .mobile-menu .mobile-links {
   display: none;
-  height: 100%;
   width: 100%;
   margin-top: 50%;
 }
@@ -85,7 +84,7 @@ header .nav-bar {
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  height: auto;
+  height: 100px;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -94,9 +93,6 @@ header .nav-bar {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 header .nav-bar .bar-name {
@@ -144,7 +140,7 @@ header .nav-box h1 {
   header .hero {
     height: 330px;
     width: 100%;
-    min-width: 720px;
+    min-width: 770px;
     background-image: url(../images/desktop/image-hero-ipad.jpg);
   }
   header .burguer {
@@ -152,7 +148,7 @@ header .nav-box h1 {
   }
   header .nav-links {
     display: block;
-    margin: 25px 35px 0 0;
+    margin: 15px 35px 0 0;
   }
   header .nav-links ul {
     display: -webkit-box;
@@ -160,7 +156,6 @@ header .nav-box h1 {
     display: flex;
   }
   header .nav-links ul li {
-    display: block;
     list-style: none;
     padding-bottom: 5px;
     margin: 0 10px;
@@ -172,20 +167,63 @@ header .nav-box h1 {
     font-family: "Alata";
     color: white;
   }
-  header .nav-links ul li:hover {
+  header .nav-links ul li a:hover {
     border-bottom: 2px solid white;
   }
   header .nav-box {
     width: 350px;
     height: 150px;
-    margin: 20px 0px 0px 45px;
+    margin: 0px 0px 0px 45px;
   }
+}
+
+@media (min-width: 1024px) {
+  header .nav-bar .bar-name {
+    margin: 30px 100px;
+  }
+  header .hero {
+    height: 575px;
+    width: 100%;
+    min-width: 1000px;
+    background-image: url(../images/desktop/image-hero-desktop.png);
+  }
+  header .nav-links {
+    margin: 15px 100px;
+  }
+  header .nav-links ul li a {
+    font-size: 1rem;
+  }
+  header .nav-box {
+    width: 500px;
+    height: 250px;
+    margin: 30px 100px;
+  }
+  header .nav-box h1 {
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  header .hero {
+    height: 722px;
+    width: 100%;
+    min-width: 1400px;
+    background-image: url(../images/desktop/image-hero-large.png);
+  }
+  header .nav-box {
+    margin-top: 100px;
+  }
+}
+
+main .interactive-section {
+  margin: 360px auto 0px auto;
 }
 
 main .interactive-section .interactive {
   height: 225px;
   width: 325px;
-  margin: 360px auto 40px auto;
+  margin: 45px auto;
   background-image: url(../images/mobile/image-interactive.jpg);
   -o-object-fit: cover;
      object-fit: cover;
@@ -212,23 +250,25 @@ main .interactive-section .leader p {
 
 @media (min-width: 640px) {
   main .interactive-section {
-    margin-bottom: 150px;
+    position: relative;
+    margin: 150px 45px;
   }
   main .interactive-section .interactive {
     height: 250px;
     width: 365px;
     background-image: url(../images/desktop/image-interactive.jpg);
     position: relative;
+    margin: auto;
+    right: 150px;
     z-index: -1;
-    margin: 100px 0px 40px 45px;
   }
   main .interactive-section .leader {
     height: 250px;
-    width: 300px;
+    width: 400px;
     background-color: white;
     position: absolute;
-    bottom: 30%;
-    left: 43%;
+    top: 40%;
+    left: 46.6%;
   }
   main .interactive-section .leader h2 {
     text-align: center;
@@ -243,6 +283,36 @@ main .interactive-section .leader p {
     line-height: 1.5rem;
     padding: 5px 0px 0px 60px;
   }
+}
+
+@media (min-width: 1024px) {
+  main .interactive-section {
+    margin: 250px auto;
+  }
+  main .interactive-section .interactive {
+    margin: auto;
+    width: 426px;
+    height: 290px;
+    right: 135px;
+    background-image: url(../images/desktop/image-interactive-ld.png);
+  }
+  main .interactive-section .leader {
+    height: 300px;
+    width: 400px;
+  }
+  main .interactive-section .leader p {
+    font-size: .8rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  main .interactive-section {
+    margin-top: 350px;
+  }
+}
+
+main .creations-section {
+  margin-top: 200px;
 }
 
 main .creations-section h2 {
@@ -266,6 +336,8 @@ main .creations-section .our-creations-mobile div h3 {
   color: white;
   width: 130px;
   font-size: 1.5rem;
+  font-family: "Josefin Sans";
+  font-weight: 300;
   padding: 40px 20px;
 }
 
@@ -382,7 +454,8 @@ main .creations-section .section-button:hover {
 
 @media (min-width: 640px) {
   main .creations-section {
-    margin-left: 45px;
+    position: relative;
+    margin-left: calc(50% - 350px);
   }
   main .creations-section h2 {
     text-align: start;
@@ -391,19 +464,24 @@ main .creations-section .section-button:hover {
     display: none;
   }
   main .creations-section .our-creations {
+    margin: auto;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (180px)[4];
-        grid-template-columns: repeat(4, 180px);
+    -ms-grid-columns: (190px)[4];
+        grid-template-columns: repeat(4, 190px);
     -ms-grid-rows: (1fr)[2];
         grid-template-rows: repeat(2, 1fr);
+  }
+  main .creations-section .section-button {
+    position: absolute;
+    bottom: 94%;
+    left: 515px;
+    margin: 0;
   }
 }
 
 footer {
   height: 450px;
-  background-color: black;
-  margin-top: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -411,21 +489,31 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: 80px;
+  background-color: black;
+}
+
+footer .link-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
 }
 
-footer .footer-logo {
+footer .link-section .footer-logo {
   height: 32px;
   width: 192px;
-  background-image: url(../images/logo.svg);
+  background-image: url(../images/logores2.png);
 }
 
-footer .footer-links {
+footer .link-section .footer-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -433,19 +521,39 @@ footer .footer-links {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-top: 20px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-footer .footer-links span {
+footer .link-section .footer-links span {
   font-size: 1rem;
   font-family: "Alata";
   color: white;
-  margin: 10px;
+  padding-top: 20px;
+  cursor: pointer;
 }
 
-footer .social {
+footer .link-section .footer-links span:hover {
+  border-bottom: 2px solid white;
+}
+
+footer .socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 30px;
+}
+
+footer .socials .socials-icons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -453,46 +561,85 @@ footer .social {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 30px;
+  justify-self: center;
+  padding-top: 20px;
 }
 
-footer .social .facebook {
+footer .socials .socials-icons span {
   height: 24px;
   width: 24px;
-  margin: 0 10px;
+  margin: 0px 10px;
+}
+
+footer .socials .socials-icons .facebook {
   background-image: url(../images/icon-facebook.svg);
 }
 
-footer .social .twitter {
+footer .socials .socials-icons .twitter {
   height: 20px;
-  width: 24px;
-  margin: 0 10px;
   background-image: url(../images/icon-twitter.svg);
 }
 
-footer .social .pinterest {
-  height: 24px;
-  width: 24px;
-  margin: 0 10px;
+footer .socials .socials-icons .pinterest {
   background-image: url(../images/icon-pinterest.svg);
 }
 
-footer .social .instagram {
-  height: 24px;
-  width: 24px;
-  margin: 0 10px;
+footer .socials .socials-icons .instagram {
   background-image: url(../images/icon-instagram.svg);
 }
 
-footer .rights {
-  max-width: 100%;
-  margin: 20px calc(50% - 180px);
-  color: #8c8c8c;
+footer .socials .rights {
   font-size: 1rem;
   font-family: "Alata";
-  text-align: center;
+  color: #8c8c8c;
+  padding-top: 20px;
+}
+
+@media (min-width: 640px) {
+  footer {
+    height: 140px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer .link-section {
+    padding-top: 30px;
+    padding-left: 0;
+  }
+  footer .link-section .footer-logo {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin-left: 45px;
+  }
+  footer .link-section .footer-links {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-left: 35px;
+    padding-top: 20px;
+  }
+  footer .link-section .footer-links span {
+    padding: 0 10px;
+  }
+  footer .socials {
+    padding-top: 15px;
+    padding-right: 25px;
+  }
+  footer .socials .socials-icons {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  footer .socials .rights {
+    padding-top: 25px;
+    padding-right: 5px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
